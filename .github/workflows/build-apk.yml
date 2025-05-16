@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,6 +30,7 @@ jobs:
       - name: Clone Android wrapper
         run: |
           git clone https://github.com/adiwajshing/GoAndroidWrapper.git wrapper
+          mkdir -p wrapper/app/libs
           cp no-name-game.aar wrapper/app/libs/
 
       - name: Build APK
